@@ -1,0 +1,10 @@
+global:
+  scrape_interval: 15s # Intervalo padrão para coletar métricas
+
+scrape_configs:
+  - job_name: 'api-flask'
+    # O Docker Compose criará uma rede onde os serviços podem se comunicar
+    # pelo nome do serviço. A API estará disponível em 'api:5000'.
+    static_configs:
+      - targets: ['api:5000']
+
